@@ -1,0 +1,29 @@
+name: python-flask-docker
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: docker pull
+      run: |
+        docker pull lvthillo/python-flask-docker
+    - name: docker run
+      run: |
+        docker run --name my-container -d -p 8080:8080 lvthillo/python-flask-docker
+    - uses: actions/setup-python@v2
+      with: 
+       python-version: 3.8
+    - name: test
+      run: |
+         git clone "https://github.com/barkanias/tikal-ci.git"
+         pip install flask
+         python ./app/test.py
+    - name: docker output IP  
+      run: |
+        docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' my-container
+    - name: docker output  hostname
+      run: |
+        docker inspect -f '{{ .Config.Hostname }}' my-container
