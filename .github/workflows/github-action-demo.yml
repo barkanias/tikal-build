@@ -18,7 +18,7 @@ jobs:
        python-version: 3.8
     - name: test
       run: |
-         git clone "https://github.com/barkanias/tikal-ci.git"
+         git clone "https://github.com/barkanias/tikal-build.git"
          pip install flask
          python ./app/test.py
     - name: docker output IP  
