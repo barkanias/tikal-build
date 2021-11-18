@@ -10,8 +10,12 @@ in order to understand more about the unittest.
 (Had a conflict about using pytest/unittest - and decided to go with unittest)
 
 On this yml, you can see the steps starts with the pull part,
+
 After that - we build the image,
+
 The next step we test it,
+
 And assuiming the test goes well - the next step is the output of the image. 
+
 
 That's it for this task - of course there are many other ways to get this task done, for exapmle with jenkins build jobs (with a different tepmlate but wuth the same steps).
