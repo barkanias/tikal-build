@@ -27,3 +27,4 @@ jobs:
     - name: docker output  hostname
       run: |
         docker inspect -f '{{ .Config.Hostname }}' my-container
+
