@@ -14,3 +14,6 @@ class TestApp(unittest.TestCase):
     def test_message(self):
         response = self.app.get('/')
         self.assertIn('The hostname of the container is', response.data, msg=None)
+        
+if __name__=='__main__':
+    unittest.main()
