@@ -11,7 +11,7 @@ in order to understand more about the unittest.
 
 On this yml, you can see the steps starts with the pull part,
 
-After that - we build the image,
+After that - we run the image,
 
 The next step we test it,
 
